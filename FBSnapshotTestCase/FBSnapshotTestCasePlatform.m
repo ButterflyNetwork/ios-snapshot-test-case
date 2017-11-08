@@ -32,7 +32,9 @@ NSOrderedSet *FBSnapshotTestCaseDefaultSuffixes(void)
   return [suffixesSet copy];
 }
 
-NSString *FBAgnosticNormalizedFileName(NSString *fileName, FBSnapshotTestCaseAgnosticnessOption options)
+NSString *FBAgnosticNormalizedFileName(NSString *fileName,
+                                       FBSnapshotTestCaseAgnosticnessOption options,
+                                       FBSnapshotTestCaseOSVersionFormat osVersionFormat)
 {
   if (options == FBSnapshotTestCaseAgnosticnessOptionNone) {
     return fileName;
@@ -44,8 +46,8 @@ NSString *FBAgnosticNormalizedFileName(NSString *fileName, FBSnapshotTestCaseAgn
     [mutableFileName appendFormat:@"_%@", device.model];
   }
   if (options & FBSnapshotTestCaseAgnosticnessOptionOSVersion) {
-    UIDevice *device = [UIDevice currentDevice];
-    [mutableFileName appendFormat:@"%@%@", (options & FBSnapshotTestCaseAgnosticnessOptionDeviceModel) ? @"" : @"_", device.systemVersion];
+    [mutableFileName appendFormat:@"%@%@",
+     (options & FBSnapshotTestCaseAgnosticnessOptionDeviceModel) ? @"" : @"_", FBDeviceSystemVersionString(osVersionFormat)];
   }
   if (options & FBSnapshotTestCaseAgnosticnessOptionScreenSize) {
     UIWindow *keyWindow = [[UIApplication sharedApplication] fb_strictKeyWindow];
@@ -63,4 +65,26 @@ NSString *FBAgnosticNormalizedFileName(NSString *fileName, FBSnapshotTestCaseAgn
   NSString *resultFileName = [validComponents componentsJoinedByString:@"_"];
   
   return resultFileName;
+}
+
+NSString *FBDeviceSystemVersionString(FBSnapshotTestCaseOSVersionFormat osVersionFormat)
+{
+  NSString *systemVersion = [UIDevice currentDevice].systemVersion;
+  NSArray<NSString *> *versionComponents = [systemVersion componentsSeparatedByString:@"."];
+
+  NSRange range;
+  switch (osVersionFormat) {
+    case FBSnapshotTestCaseOSVersionFormatPatch:
+      range = NSMakeRange(0, MIN(3, versionComponents.count));
+      break;
+    case FBSnapshotTestCaseOSVersionFormatMinor:
+      range = NSMakeRange(0, MIN(2, versionComponents.count));
+      break;
+    case FBSnapshotTestCaseOSVersionFormatMajor:
+      range = NSMakeRange(0, MIN(1, versionComponents.count));
+      break;
+  }
+
+  NSArray<NSString *> *subarray = [versionComponents subarrayWithRange:range];
+  return [subarray componentsJoinedByString:@"."];
 }

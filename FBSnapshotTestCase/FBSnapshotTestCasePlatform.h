@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 
 #import "FBSnapshotTestCaseAgnosticnessOption.h"
+#import "FBSnapshotTestCaseOSVersionFormat.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -39,7 +40,11 @@ NSOrderedSet *FBSnapshotTestCaseDefaultSuffixes(void);
  
  @returns An @c NSString object containing the passed @c fileName with the provided options by the @c options parameter appended at the end.
  */
-NSString *FBAgnosticNormalizedFileName(NSString *fileName, FBSnapshotTestCaseAgnosticnessOption options);
+NSString *FBAgnosticNormalizedFileName(NSString *fileName,
+                                       FBSnapshotTestCaseAgnosticnessOption options,
+                                       FBSnapshotTestCaseOSVersionFormat osVersionFormat);
+
+NSString *FBDeviceSystemVersionString(FBSnapshotTestCaseOSVersionFormat osVersionFormat);
 
 #ifdef __cplusplus
 }

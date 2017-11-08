@@ -52,6 +52,10 @@
   _snapshotController.agnosticnessOptions = agnosticnessOptions;
 }
 
+- (void)setOsVersionFormat:(FBSnapshotTestCaseOSVersionFormat)osVersionFormat {
+  _snapshotController.osVersionFormat = osVersionFormat;
+}
+
 - (BOOL)usesDrawViewHierarchyInRect
 {
   return _snapshotController.usesDrawViewHierarchyInRect;

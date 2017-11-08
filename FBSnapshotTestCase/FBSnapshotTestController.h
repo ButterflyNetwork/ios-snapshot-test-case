@@ -12,6 +12,7 @@
 #import <UIKit/UIKit.h>
 
 #import "FBSnapshotTestCaseAgnosticnessOption.h"
+#import "FBSnapshotTestCaseOSVersionFormat.h"
 
 typedef NS_ENUM(NSInteger, FBSnapshotTestControllerErrorCode) {
   FBSnapshotTestControllerErrorCodeUnknown,
@@ -62,6 +63,12 @@ extern NSString *const FBDiffedImageKey;
  The default value is @c NO.
  */
 @property (readwrite, nonatomic, assign) FBSnapshotTestCaseAgnosticnessOption agnosticnessOptions;
+
+/**
+ Used to determine the OS version format appended to the snapshot filename. This property is ignored unless
+ `agnosticnessOptions` is `FBSnapshotTestCaseAgnosticnessOptionOSVersion`.
+ */
+@property (readwrite, nonatomic, assign) FBSnapshotTestCaseOSVersionFormat osVersionFormat;
 
 /**
  Uses drawViewHierarchyInRect:afterScreenUpdates: to draw the image instead of renderInContext:

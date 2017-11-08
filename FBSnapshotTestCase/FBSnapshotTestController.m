@@ -47,6 +47,7 @@ typedef NS_ENUM(NSUInteger, FBTestSnapshotFileNameType) {
   if (self = [super init]) {
     _testName = [testName copy];
     _agnosticnessOptions = FBSnapshotTestCaseAgnosticnessOptionNone;
+    _osVersionFormat = FBSnapshotTestCaseOSVersionFormatPatch;
     
     _fileManager = [[NSFileManager alloc] init];
   }
@@ -234,7 +235,7 @@ typedef NS_ENUM(NSUInteger, FBTestSnapshotFileNameType) {
   }
   
   if (self.agnosticnessOptions != FBSnapshotTestCaseAgnosticnessOptionNone) {
-    fileName = FBAgnosticNormalizedFileName(fileName, self.agnosticnessOptions);
+    fileName = FBAgnosticNormalizedFileName(fileName, self.agnosticnessOptions, self.osVersionFormat);
   }
   
   if ([[UIScreen mainScreen] scale] > 1) {

@@ -106,7 +106,9 @@
   SEL selector = @selector(agnosticnessOptions);
   [controller referenceImageForSelector:selector identifier:@"" error:&error];
   XCTAssertNotNil(error);
-  NSString *deviceAgnosticReferencePath = FBAgnosticNormalizedFileName(NSStringFromSelector(selector), FBSnapshotTestCaseAgnosticnessOptionDeviceModel);
+  NSString *deviceAgnosticReferencePath = FBAgnosticNormalizedFileName(NSStringFromSelector(selector),
+                                                                       FBSnapshotTestCaseAgnosticnessOptionDeviceModel,
+                                                                       FBSnapshotTestCaseOSVersionFormatPatch);
   XCTAssertTrue([(NSString *)[error.userInfo objectForKey:FBReferenceImageFilePathKey] containsString:deviceAgnosticReferencePath]);
 }
 

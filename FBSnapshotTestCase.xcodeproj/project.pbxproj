@@ -15,6 +15,8 @@
 		1335641B1B59C3F500A4E4BF /* UIImage+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 133564151B59C3F500A4E4BF /* UIImage+Snapshot.m */; };
 		13CBB39D1AEE013900B6ADBA /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 13CBB39B1AEE013900B6ADBA /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		13CBB39E1AEE013900B6ADBA /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CBB39C1AEE013900B6ADBA /* FBSnapshotTestCasePlatform.m */; };
+		18D7E5C31FB27784007349C2 /* FBSnapshotTestCaseOSVersionFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 18D7E5C21FB27784007349C2 /* FBSnapshotTestCaseOSVersionFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18D7E5C41FB27789007349C2 /* FBSnapshotTestCaseOSVersionFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 18D7E5C21FB27784007349C2 /* FBSnapshotTestCaseOSVersionFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D683C2B1CF3A2F900656B71 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D683C241CF3A24500656B71 /* libOCMock.a */; };
 		6D935ED11CDB609100E24C54 /* FBSnapshotTestCaseAgnosticnessOption.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D935ECF1CDB609100E24C54 /* FBSnapshotTestCaseAgnosticnessOption.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D935ED21CDB609100E24C54 /* FBSnapshotTestCaseAgnosticnessOption.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D935ECF1CDB609100E24C54 /* FBSnapshotTestCaseAgnosticnessOption.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -135,6 +137,7 @@
 		133564151B59C3F500A4E4BF /* UIImage+Snapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Snapshot.m"; sourceTree = "<group>"; };
 		13CBB39B1AEE013900B6ADBA /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
 		13CBB39C1AEE013900B6ADBA /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
+		18D7E5C21FB27784007349C2 /* FBSnapshotTestCaseOSVersionFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBSnapshotTestCaseOSVersionFormat.h; sourceTree = "<group>"; };
 		6D683C161CF3A24400656B71 /* OCMock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCMock.xcodeproj; path = vendor/OCMock/Source/OCMock.xcodeproj; sourceTree = "<group>"; };
 		6D935ECF1CDB609100E24C54 /* FBSnapshotTestCaseAgnosticnessOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBSnapshotTestCaseAgnosticnessOption.h; sourceTree = "<group>"; };
 		6D935ED51CDBDA6500E24C54 /* FBSnapshotTestCasePlatformTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBSnapshotTestCasePlatformTests.m; sourceTree = "<group>"; };
@@ -273,6 +276,7 @@
 				B31988221AB7849400B0A900 /* FBSnapshotTestController.h */,
 				B31988231AB7849400B0A900 /* FBSnapshotTestController.m */,
 				6D935ECF1CDB609100E24C54 /* FBSnapshotTestCaseAgnosticnessOption.h */,
+				18D7E5C21FB27784007349C2 /* FBSnapshotTestCaseOSVersionFormat.h */,
 				F0D698F41B204E120005CAC9 /* SwiftSupport.swift */,
 				B31987F31AB782D000B0A900 /* Supporting Files */,
 			);
@@ -322,6 +326,7 @@
 			files = (
 				827137941C63ABF000354E42 /* UIApplication+StrictKeyWindow.h in Headers */,
 				8271379A1C63ABF900354E42 /* FBSnapshotTestCasePlatform.h in Headers */,
+				18D7E5C41FB27789007349C2 /* FBSnapshotTestCaseOSVersionFormat.h in Headers */,
 				6D935ED21CDB609100E24C54 /* FBSnapshotTestCaseAgnosticnessOption.h in Headers */,
 				827137911C63ABE900354E42 /* UIImage+Compare.h in Headers */,
 				827137991C63ABF900354E42 /* FBSnapshotTestCase.h in Headers */,
@@ -337,6 +342,7 @@
 			files = (
 				BC45D5211C2AEFCE007C72F3 /* UIApplication+StrictKeyWindow.h in Headers */,
 				B31988281AB7849400B0A900 /* FBSnapshotTestCase.h in Headers */,
+				18D7E5C31FB27784007349C2 /* FBSnapshotTestCaseOSVersionFormat.h in Headers */,
 				6D935ED11CDB609100E24C54 /* FBSnapshotTestCaseAgnosticnessOption.h in Headers */,
 				13CBB39D1AEE013900B6ADBA /* FBSnapshotTestCasePlatform.h in Headers */,
 				B319882A1AB7849400B0A900 /* FBSnapshotTestController.h in Headers */,
